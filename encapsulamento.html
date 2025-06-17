@@ -1,0 +1,108 @@
+<?php
+
+class Produto {
+
+    // Atributos
+    private $descricao;
+    private $unidadeMedida;
+    private $quantidade;
+    private $valorUnitario;
+
+    public function getValorTotal(){
+        return ($this->quantidade * $this->valorUnitario);
+    }
+
+    /**
+     * Get the value of descricao
+     */
+    public function getDescricao()
+    {
+
+        return $this->descricao;
+    }
+
+    /**
+     * Set the value of descricao
+     */
+    public function setDescricao($descricao): self
+    {
+        $this->descricao = $descricao;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of unidadeMedida
+     */
+    public function getUnidadeMedida()
+    {
+        return $this->unidadeMedida;
+    }
+
+    /**
+     * Set the value of unidadeMedida
+     */
+    public function setUnidadeMedida($unidadeMedida): self
+    {
+        $this->unidadeMedida = $unidadeMedida;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of quantidade
+     */
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
+
+    /**
+     * Set the value of quantidade
+     */
+    public function setQuantidade($quantidade): self
+    {
+        $this->quantidade = $quantidade;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of valorUnitario
+     */
+    public function getValorUnitario()
+    {
+        $valorTOTAL = $this->quantidade * $this->valorUnitario;
+        return $this->valorUnitario;
+    }
+
+    /**
+     * Set the value of valorUnitario
+     */
+    public function setValorUnitario($valorUnitario): self
+    {
+        $this->valorUnitario = $valorUnitario;
+
+        return $this;
+    }
+}
+$array = [];
+
+for($i = 0; $i < 3; $i++)
+{
+    $array[$i] = new Produto;
+    $array[$i]->setDescricao(readline("O que é o produto? "));
+    $array[$i]->setUnidadeMedida(readline("Qual a unidade de medida? "));
+    $array[$i]->setQuantidade(readline("Qual é o preço? "));
+    $array[$i]->setValorUnitario(readline("Qual é o valor por unidade? "));
+
+    print "Produto: ". $this->getDescricao ."\n";
+    print "Unidade de Medida: ". $this->getUnidadeMedida ."\n";
+    print "Preço: ". $this->getQuantidade ."\n";
+    print "Valor por Unidade: ". $this->getValorUnitario ."\n";
+
+    print $this->descricao ." | " . $this->unidadeMedida ." | " . $this->quantidade ." x " . $this->valorUnitario ." = " . $this->valorTOTAL ;
+}
+
+   //Get == obter dados de uma determinada origem ou recurso específico
+   //Set == declara
